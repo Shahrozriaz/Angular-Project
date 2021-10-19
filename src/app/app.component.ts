@@ -62,6 +62,13 @@ export class AppComponent {
   
   
   onSubmit() {
+    let ReturnData : any ;
+    this.Service.service('https://jsonplaceholder.typicode.com/posts' , {}).subscribe( 
+      (data) => {
+        ReturnData = data
+        debugger
+      }
+    )
     this.myForm.patchValue({
       UserName : ""
     })
